@@ -10,6 +10,13 @@ export default async function Home() {
           <div className="absolute top-[344px] left-[1070px]">
             <ForSaleSign />
           </div>
+          <div className="absolute top-[464px] left-[325px]">
+            <h4 className="absolute top-[45.5px] left-[121.72px] font-medium text-blue-light text-lg tracking-[2px]">
+              Neighbor?
+            </h4>
+          </div>
+          <div className="absolute top-[295.64px] left-[-208.4px] w-[248.56px] h-[248.72px] rounded-full bg-white" />
+          <div className="absolute top-[296.02px] right-[-207.49px] w-[248.56px] h-[248.56px] rounded-full bg-white" />
         </main>
       </div>
     </>
