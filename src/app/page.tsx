@@ -1,7 +1,16 @@
 import { ForSaleSign } from "@/components/for-sale-sign";
 import { TopNav } from "@/components/top-nav";
+import { useProperties } from "@/store/properties";
+import { useEffect } from "react";
 
 export default async function Home() {
+  const { fetchProperty, fetchTickerContents } = useProperties();
+
+  useEffect(() => {
+    fetchProperty(1);
+    fetchTickerContents();
+  }, [fetchProperty, fetchTickerContents]);
+
   return (
     <>
       <div className="mx-auto max-w-[2560px] w-full h-[1440px] overflow-hidden">

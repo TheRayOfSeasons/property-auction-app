@@ -1,8 +1,11 @@
 import React from 'react';
 import { Sprite } from './sprite';
 import Image from 'next/image';
+import { useProperties } from '@/store/properties';
 
 export const TopNav: React.FC = () => {
+  const { currentProperty, tickerContents } = useProperties();
+
   return (
     <header className="w-full">
       <nav className="relative w-full h-[240px]">
@@ -18,8 +21,8 @@ export const TopNav: React.FC = () => {
           <div className="w-[456px] h-full">
             <div className="h-[27px] flex flex-col justify-center h-full">
               <p className="text-center font-extralight text-lg">Own</p>
-              <h2 className="text-center font-light text-5xl">14 Flood St.</h2>
-              <p className="text-center font-extralight text-lg">New Orleans, LA 70122</p>
+              <h2 className="text-center font-light text-5xl">{currentProperty?.street}</h2>
+              <p className="text-center font-extralight text-lg">{currentProperty?.address}</p>
               <div className="mt-4 w-full flex flex-row justify-center">
                 <Sprite
                   name="home-bundle"

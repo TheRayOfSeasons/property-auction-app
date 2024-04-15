@@ -25,13 +25,13 @@ const action = async (id: number) => {
   };
 }
 
-type ErrorResponse = {
+export type PropertyErrorResponse = {
   msg: string
 }
 
-type MainResponse = ReturnType<typeof action>;
+export type PropertyMainResponse = Awaited<ReturnType<typeof action>>;
 
-export type Response = MainResponse | ErrorResponse;
+export type PropertyResponse = PropertyMainResponse | PropertyErrorResponse;
 
 export async function GET(request: Request, { params }: Params) {
   let id: number;

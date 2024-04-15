@@ -18,7 +18,7 @@ const action = async (count: number) => {
   };
 }
 
-export type Response = ReturnType<typeof action>;
+export type TickerResponse = Awaited<ReturnType<typeof action>>;
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
