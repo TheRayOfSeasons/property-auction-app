@@ -1,8 +1,8 @@
 {
+  "id": "f18cb4e7-330a-407a-b73e-f84ccc0d2523",
+  "prevId": "3f05e108-7020-47ac-ae5d-5e3b40b474a6",
   "version": "5",
   "dialect": "sqlite",
-  "id": "3f05e108-7020-47ac-ae5d-5e3b40b474a6",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "bid_amount": {
       "name": "bid_amount",
@@ -143,28 +143,28 @@
         "properties_bid_bids_id_fk": {
           "name": "properties_bid_bids_id_fk",
           "tableFrom": "properties",
-          "tableTo": "bids",
           "columnsFrom": [
             "bid"
           ],
+          "tableTo": "bids",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         },
         "properties_bid_amount_bid_amount_id_fk": {
           "name": "properties_bid_amount_bid_amount_id_fk",
           "tableFrom": "properties",
-          "tableTo": "bid_amount",
           "columnsFrom": [
             "bid_amount"
           ],
+          "tableTo": "bid_amount",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -173,8 +173,8 @@
   },
   "enums": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
+    "tables": {}
   }
 }

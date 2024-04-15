@@ -21,6 +21,6 @@ export const properties = sqliteTable('properties', {
   change: real('change'),
   marketValue: real('market_value'),
   reservePrice: real('reserve_price'),
-  bid: integer('id').references((): AnySQLiteColumn => bids.id),
-  bidAmount: integer('id').references((): AnySQLiteColumn => bidAmounts.id),
+  bid: integer('bid').references((): AnySQLiteColumn => bids.id),
+  bidAmount: integer('bid_amount').references((): AnySQLiteColumn => bidAmounts.id),
 });
