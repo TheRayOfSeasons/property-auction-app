@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "3f05e108-7020-47ac-ae5d-5e3b40b474a6",
+  "id": "6aa8874e-ca3e-46e2-9027-53bdd67ccb2f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "bid_amount": {
