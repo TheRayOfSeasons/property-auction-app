@@ -1,5 +1,35 @@
-import { NextResponse } from 'next/server';
+import { db } from '@/db';
+import { properties } from '@/db/schema';
+import { type NextRequest, NextResponse } from 'next/server';
  
-export async function GET(request: Request) {
-  return NextResponse.json({ msg: 'Hello from server' });
+const DEFAULT_COUNT = 10;
+
+const action = async (count: number) => {
+  const result = await db
+    .select({
+      street: properties.street,
+      change: properties.change,
+      reservePrice: properties.reservePrice,
+    })
+    .from(properties)
+    .limit(count);
+  return {
+    properties: result,
+  };
+}
+
+export type Response = ReturnType<typeof action>;
+
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  let count = DEFAULT_COUNT;
+  const rawCount = searchParams.get('count');
+  if (rawCount) {
+    try {
+      count = Number(rawCount);
+    } catch(error) {
+      // Do nothing. We assume default count.
+    }
+  }
+  return NextResponse.json(await action(count));
 }
