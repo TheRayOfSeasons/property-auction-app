@@ -77,8 +77,8 @@ export async function seed() {
       winning: 200000.00,
     }).returning({ id: bidAmounts.id });
     await db.insert(properties).values({
-      street: '289 Hempstead St.',
-      address: 'California',
+      street: '57 West Ave G.',
+      address: 'Texas',
       change: 100.00,
       marketValue: 45000,
       reservePrice: 5200,
