@@ -5,7 +5,7 @@ import { useProperties } from '@/store/properties';
 import { TickerItem } from './ticker-item';
 
 export const TopNav: React.FC = () => {
-  const { currentProperty, tickerContents } = useProperties();
+  const { currentProperty, tickerContents, toggleMapMode } = useProperties();
 
   return (
     <header className="w-full">
@@ -34,12 +34,17 @@ export const TopNav: React.FC = () => {
             </div>
           </div>
           <div className="pt-[75px] pr-[69.58px] pb-[74.5px] pl-[69.78px]">
-            <Image
-              src="/svg/map-pin.svg"
-              alt="map-pin"
-              width={64}
-              height={94}
-            />
+            <button
+              type="button"
+              onClick={toggleMapMode}
+            >
+              <Image
+                src="/svg/map-pin.svg"
+                alt="map-pin"
+                width={64}
+                height={94}
+              />
+            </button>
           </div>
           <div className="w-[456px] h-full ml-[18px]">
             <div className="h-[27px] flex flex-col justify-center h-full">

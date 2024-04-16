@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "be5e6323-08c6-4465-a37e-4d835c7a131d",
+  "id": "c3582a15-973a-437a-ac59-a1159129874f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "bid_amount": {
@@ -133,6 +133,22 @@
           "notNull": true,
           "autoincrement": false,
           "default": 0
+        },
+        "satellite_view": {
+          "name": "satellite_view",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "street_view": {
+          "name": "street_view",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
         },
         "bid": {
           "name": "bid",

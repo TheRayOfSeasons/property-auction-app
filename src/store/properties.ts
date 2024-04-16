@@ -14,23 +14,31 @@ interface PropertyState {
 interface PropertyActions {
   fetchProperty: (id: number) => Promise<void>
   fetchTickerContents: () => Promise<void>
-  setMapMode: (mapMode: MapMode) => void
+  toggleMapMode: () => void
 }
 
 interface State extends PropertyState, PropertyActions {}
 
-export const useProperties = create<State>((set) => ({
+export const useProperties = create<State>((set, get) => ({
   currentProperty: undefined,
   tickerContents: {
     properties: [],
   },
   mapMode: 'street',
-  setMapMode: (mapMode) => {
-    set({
-      mapMode,
-    });
+  toggleMapMode: () => {
+    const { mapMode } = get();
+    if (mapMode === 'street') {
+      set({
+        mapMode: 'satellite',
+      });
+    } else if (mapMode === 'satellite') {
+      set({
+        mapMode: 'street',
+      });
+    }
   },
   fetchProperty: async (id) => {
+    console.log({ id });
     const response = await ky.get(`/api/property/${id}`);
     const data = await response.json<PropertyMainResponse>();
     set({

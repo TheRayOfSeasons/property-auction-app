@@ -21,6 +21,8 @@ export const properties = sqliteTable('properties', {
   change: real('change').notNull().default(0.00),
   marketValue: real('market_value').notNull().default(0.00),
   reservePrice: real('reserve_price').notNull().default(0.00),
+  satelliteView: text('satellite_view').notNull().default(''),
+  streetView: text('street_view').notNull().default(''),
   bid: integer('bid').references((): AnySQLiteColumn => bids.id).notNull(),
   bidAmount: integer('bid_amount').references((): AnySQLiteColumn => bidAmounts.id).notNull(),
 });

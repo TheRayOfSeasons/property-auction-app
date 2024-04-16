@@ -19,6 +19,8 @@ export async function seed() {
       change: 100.00,
       marketValue: 40000,
       reservePrice: 5000,
+      satelliteView: '/satellite-view-1.png',
+      streetView: '/street-view-1.jpg',
       bid: bid[0].id,
       bidAmount: bidAmount[0].id,
     });
@@ -36,10 +38,12 @@ export async function seed() {
     }).returning({ id: bidAmounts.id });
     await db.insert(properties).values({
       street: '24 Washington Ave.',
-      address: 'Washington DC',
+      address: 'New Orleans, LA, USA',
       change: -100.00,
       marketValue: 50000,
       reservePrice: 5200,
+      satelliteView: '/satellite-view-2.png',
+      streetView: '/street-view-2.png',
       bid: bid[0].id,
       bidAmount: bidAmount[0].id,
     });
@@ -57,10 +61,12 @@ export async function seed() {
     }).returning({ id: bidAmounts.id });
     await db.insert(properties).values({
       street: '289 Hempstead St.',
-      address: 'California',
+      address: 'New London, CT 06320, USA',
       change: 0.00,
       marketValue: 30000,
       reservePrice: 5000,
+      satelliteView: '/satellite-view-3.png',
+      streetView: '/street-view-3.png',
       bid: bid[0].id,
       bidAmount: bidAmount[0].id,
     });
@@ -78,10 +84,12 @@ export async function seed() {
     }).returning({ id: bidAmounts.id });
     await db.insert(properties).values({
       street: '57 West Ave G.',
-      address: 'Texas',
+      address: 'Hilton, NY 14468, USA',
       change: 100.00,
       marketValue: 45000,
       reservePrice: 5200,
+      satelliteView: '/satellite-view-4.png',
+      streetView: '/street-view-4.png',
       bid: bid[0].id,
       bidAmount: bidAmount[0].id,
     });
