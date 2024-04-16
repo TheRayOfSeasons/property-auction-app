@@ -37,7 +37,7 @@ export const TickerItem: React.FC<Props> = ({ className, item }) => {
       role="button"
       onClick={changeProperty}
     >
-      <div>
+      <div className="pt-0.5">
         {status === 'POSITIVE' && (
           <Sprite
             name="green-arrow-ticker"
@@ -61,11 +61,11 @@ export const TickerItem: React.FC<Props> = ({ className, item }) => {
         )}
       </div>
       <div className="flex-1 pl-[3.55px]">
-        <h4 className="font-medium text-lg">{item.street}</h4>
-        <div className="flex flex-row">
+        <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">{item.street}</h4>
+        <div className="flex flex-row mt-0.5">
           <p
             className={classNames(
-              'font-medium text-lg',
+              'font-medium text-lg leading-[19px] tracking-[0.78px]',
               {
                 'text-green': status === 'POSITIVE',
                 'text-red': status === 'NEGATIVE',
@@ -83,7 +83,7 @@ export const TickerItem: React.FC<Props> = ({ className, item }) => {
               {Math.abs(item.change).toLocaleString()}
             </span>
           </p>
-          <p className="ml-[23px] font-thin text-lg text-gray-dark">
+          <p className="ml-[23px] font-thin text-lg text-gray-dark leading-[19px] tracking-[0.78px]">
             ${item.reservePrice.toLocaleString()}
           </p>
         </div>

@@ -19,18 +19,22 @@ export const TopNav: React.FC = () => {
               height={94}
             />
           </div>
-          <div className="w-[456px] h-full">
-            <div className="h-[27px] flex flex-col justify-center h-full">
-              <p className="text-center font-extralight text-lg">Own</p>
-              <h2 className="text-center font-light text-5xl">{currentProperty?.street}</h2>
-              <p className="text-center font-extralight text-lg">{currentProperty?.address}</p>
-              <div className="mt-4 w-full flex flex-row justify-center">
-                <Sprite
-                  name="home-bundle"
-                  width={65}
-                  height={22}
-                />
-              </div>
+          <div className="relative w-[456px] pt-[66.25px] h-full">
+            <div className="absolute top-[66.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">Own</p>
+            </div>
+            <div className="absolute top-[87px] w-full">
+              <h2 className="text-center font-light text-[46px] tracking-[2px] leading-[69px] whitespace-nowrap">{currentProperty?.street}</h2>
+            </div>
+            <div className="absolute top-[146.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">{currentProperty?.address}</p>
+            </div>
+            <div className="absolute top-[182px] w-full flex flex-row justify-center">
+              <Sprite
+                name="home-bundle"
+                width={65}
+                height={22}
+              />
             </div>
           </div>
           <div className="pt-[75px] pr-[69.58px] pb-[74.5px] pl-[69.78px]">
@@ -46,11 +50,15 @@ export const TopNav: React.FC = () => {
               />
             </button>
           </div>
-          <div className="w-[456px] h-full ml-[18px]">
-            <div className="h-[27px] flex flex-col justify-center h-full">
-              <p className="text-center font-extralight text-lg">To</p>
-              <h2 className="text-center font-light text-5xl">Start</h2>
-              <p className="text-center font-extralight text-lg">Place Deposit</p>
+          <div className="relative w-[456px] h-full ml-[18px]">
+            <div className="absolute top-[66.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">To</p>
+            </div>
+            <div className="absolute top-[86.75px] w-full">
+              <h2 className="text-center font-light text-[46px] tracking-[2px] leading-[69px]">Start</h2>
+            </div>
+            <div className="absolute top-[146.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">Place Deposit</p>
             </div>
           </div>
           <div className="ml-3.5 py-[75px] pr-[77.65px] pl-[78.35px]">
@@ -60,11 +68,15 @@ export const TopNav: React.FC = () => {
               height={94}
             />
           </div>
-          <div className="w-[456px] h-full ml-[18px]">
-            <div className="h-[27px] flex flex-col justify-center h-full">
-              <p className="text-center font-extralight text-lg">Market ${currentProperty?.marketValue?.toLocaleString()}</p>
-              <h2 className="text-center font-light text-5xl">${currentProperty?.reservePrice?.toLocaleString()}</h2>
-              <p className="text-center font-extralight text-lg">Reserve Price</p>
+          <div className="relative w-[456px] h-full ml-[18px]">
+            <div className="absolute top-[66.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">Market ${currentProperty?.marketValue?.toLocaleString()}</p>
+            </div>
+            <div className="absolute top-[86.75px] w-full">
+              <h2 className="text-center font-light text-[46px] tracking-[2px] leading-[69px]">${currentProperty?.reservePrice?.toLocaleString()}</h2>
+            </div>
+            <div className="absolute top-[146.25px] w-full">
+              <p className="text-center font-extralight text-lg tracking-[2px] leading-[27px]">Reserve Price</p>
             </div>
           </div>
           <div className="pt-[64px] pb-[76px] px-[72px]">
@@ -80,21 +92,21 @@ export const TopNav: React.FC = () => {
       <nav className="relative w-full h-[60px] flex flex-row">
         <div className="bg-white flex flex-row">
           <div className="w-[171px] px-6 py-2">
-            <h4 className="font-medium text-lg">Outbid</h4>
-            <p className="font-medium text-lg text-red">{currentProperty?.bid.outbid}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Outbid</h4>
+            <p className="font-medium text-lg text-red leading-[19px] tracking-[0.78px] mt-0.5">{currentProperty?.bid.outbid}</p>
           </div>
           <div className="w-[140px] py-2">
-            <h4 className="font-medium text-lg">Active</h4>
-            <p className="font-medium text-lg text-gray">{currentProperty?.bid.active}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Active</h4>
+            <p className="font-medium text-lg text-gray leading-[19px] tracking-[0.78px] mt-0.5">{currentProperty?.bid.active}</p>
           </div>
           <div className="w-[91px] py-2">
-            <h4 className="font-medium text-lg">Winning</h4>
-            <p className="font-medium text-lg text-green">{currentProperty?.bid.winning}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Winning</h4>
+            <p className="font-medium text-lg text-green leading-[19px] tracking-[0.78px] mt-0.5">{currentProperty?.bid.winning}</p>
           </div>
         </div>
         <div className="flex-1 relative flex flex-row">
           <div className="absolute w-full h-full top-0 left-0 bg-white opacity-[0.5] z-[1]" />
-          <div className="relative w-full pl-[73px] pr-[115px] py-2 flex flex-row z-[2]">
+          <div className="relative w-full pl-[73px] flex flex-row z-[2]">
             {tickerContents?.properties[0] && (
               <TickerItem
                 item={tickerContents.properties[0]}
@@ -122,16 +134,16 @@ export const TopNav: React.FC = () => {
         </div>
         <div className="bg-white flex flex-row">
           <div className="w-[159px] px-6 py-2">
-            <h4 className="font-medium text-lg">Winning</h4>
-            <p className="font-medium text-lg text-green">${currentProperty?.bidAmount.winning.toLocaleString()}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Winning</h4>
+            <p className="font-medium text-lg text-green leading-[19px] tracking-[0.78px] mt-0.5">${currentProperty?.bidAmount.winning.toLocaleString()}</p>
           </div>
           <div className="w-[135px] py-2">
-            <h4 className="font-medium text-lg">Active</h4>
-            <p className="font-medium text-lg text-gray">${currentProperty?.bidAmount.active.toLocaleString()}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Active</h4>
+            <p className="font-medium text-lg text-gray leading-[19px] tracking-[0.78px] mt-0.5">${currentProperty?.bidAmount.active.toLocaleString()}</p>
           </div>
           <div className="w-[108px] py-2">
-            <h4 className="font-medium text-lg">Outbid</h4>
-            <p className="font-medium text-lg text-red">${currentProperty?.bidAmount.outbid.toLocaleString()}</p>
+            <h4 className="font-medium text-lg leading-[19px] tracking-[0.78px]">Outbid</h4>
+            <p className="font-medium text-lg text-red leading-[19px] tracking-[0.78px] mt-0.5">${currentProperty?.bidAmount.outbid.toLocaleString()}</p>
           </div>
         </div>
       </nav>
