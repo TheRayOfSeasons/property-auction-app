@@ -33,6 +33,21 @@ export type PropertyMainResponse = Awaited<ReturnType<typeof action>>;
 
 export type PropertyResponse = PropertyMainResponse | PropertyErrorResponse;
 
+/**
+ * @swagger
+ * /api/property/{id}:
+ *   get:
+ *     description: Retrieves all data from a property
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         type: integer
+ *         required: true
+ *         description: Numeric ID of a property
+ *     responses:
+ *       200:
+ *         description: All the details from a property.
+ */
 export async function GET(request: Request, { params }: Params) {
   let id: number;
   try {
