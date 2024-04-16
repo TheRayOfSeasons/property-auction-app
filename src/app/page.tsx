@@ -1,9 +1,11 @@
+'use client';
+
 import { ForSaleSign } from "@/components/for-sale-sign";
 import { TopNav } from "@/components/top-nav";
 import { useProperties } from "@/store/properties";
 import { useEffect } from "react";
 
-export default async function Home() {
+export default function Home() {
   const { fetchProperty, fetchTickerContents } = useProperties();
 
   useEffect(() => {

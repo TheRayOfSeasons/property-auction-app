@@ -7,6 +7,7 @@ const DEFAULT_COUNT = 10;
 const action = async (count: number) => {
   const result = await db
     .select({
+      id: properties.id,
       street: properties.street,
       change: properties.change,
       reservePrice: properties.reservePrice,
@@ -19,6 +20,7 @@ const action = async (count: number) => {
 }
 
 export type TickerResponse = Awaited<ReturnType<typeof action>>;
+export type TickerProperty = TickerResponse['properties'][0];
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;

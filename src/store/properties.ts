@@ -21,7 +21,9 @@ interface State extends PropertyState, PropertyActions {}
 
 export const useProperties = create<State>((set) => ({
   currentProperty: undefined,
-  tickerContents: undefined,
+  tickerContents: {
+    properties: [],
+  },
   mapMode: 'street',
   setMapMode: (mapMode) => {
     set({

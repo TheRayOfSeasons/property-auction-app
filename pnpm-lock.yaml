@@ -8,6 +8,9 @@ dependencies:
   better-sqlite3:
     specifier: ^9.5.0
     version: 9.5.0
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   drizzle-orm:
     specifier: ^0.30.7
     version: 0.30.7(@types/better-sqlite3@7.6.9)(@types/react@18.2.75)(better-sqlite3@9.5.0)(react@18.2.0)
@@ -1188,6 +1191,10 @@ packages:
 
   /chownr@1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
+    dev: false
+
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
   /cli-color@2.0.4:
