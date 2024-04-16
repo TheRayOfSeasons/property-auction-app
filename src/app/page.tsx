@@ -1,9 +1,9 @@
 'use client';
 
-import { ForSaleSign } from "@/components/for-sale-sign";
-import { TopNav } from "@/components/top-nav";
-import { useProperties } from "@/store/properties";
-import { useEffect, useMemo } from "react";
+import { ForSaleSign } from '@/components/for-sale-sign';
+import { TopNav } from '@/components/top-nav';
+import { useProperties } from '@/store/properties';
+import { useEffect, useMemo } from 'react';
 
 export default function Home() {
   const { currentProperty, fetchProperty, fetchTickerContents, mapMode } = useProperties();
