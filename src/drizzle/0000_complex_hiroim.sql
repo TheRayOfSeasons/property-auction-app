@@ -1,26 +1,26 @@
 CREATE TABLE `bid_amount` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-	`outbid` real,
-	`active` real,
-	`winning` real
+	`outbid` real DEFAULT 0 NOT NULL,
+	`active` real DEFAULT 0 NOT NULL,
+	`winning` real DEFAULT 0 NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `bids` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-	`outbid` integer,
-	`active` integer,
-	`winning` integer
+	`outbid` integer DEFAULT 0 NOT NULL,
+	`active` integer DEFAULT 0 NOT NULL,
+	`winning` integer DEFAULT 0 NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `properties` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-	`street` text,
-	`address` text,
-	`change` real,
-	`market_value` real,
-	`reserve_price` real,
-	`bid` integer,
-	`bid_amount` integer,
+	`street` text DEFAULT '' NOT NULL,
+	`address` text DEFAULT '' NOT NULL,
+	`change` real DEFAULT 0 NOT NULL,
+	`market_value` real DEFAULT 0 NOT NULL,
+	`reserve_price` real DEFAULT 0 NOT NULL,
+	`bid` integer NOT NULL,
+	`bid_amount` integer NOT NULL,
 	FOREIGN KEY (`bid`) REFERENCES `bids`(`id`) ON UPDATE no action ON DELETE no action,
 	FOREIGN KEY (`bid_amount`) REFERENCES `bid_amount`(`id`) ON UPDATE no action ON DELETE no action
 );
