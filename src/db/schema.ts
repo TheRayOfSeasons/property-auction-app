@@ -18,7 +18,7 @@ export const properties = sqliteTable('properties', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   street: text('street').notNull().default(''),
   address: text('address').notNull().default(''),
-  change: real('change').notNull().default(0.00),
+  change: real('change').notNull().default(0.00), // negative or positive value of last bid amount
   marketValue: real('market_value').notNull().default(0.00),
   reservePrice: real('reserve_price').notNull().default(0.00),
   satelliteView: text('satellite_view').notNull().default(''),
