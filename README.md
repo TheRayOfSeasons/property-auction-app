@@ -6,12 +6,22 @@ An application that imitates a property auction system. This is submitted as an 
 
 1. Ensure that you have pnpm. If not, install with `npm install -g pnpm`.
 2. `cd` into the project directory, then run `pnpm install`.
-3. Run migrations and fill the sqlite database with mock data through running the following:
+3. Setup Turso through `curl -sSfL https://get.tur.so/install.sh | bash`
+4. Sign-in or register in Turso. You may refer to the first 4 instructions here: [https://orm.drizzle.team/learn/tutorials/drizzle-with-turso](https://orm.drizzle.team/learn/tutorials/drizzle-with-turso).
+5. For good measure, refresh/reload your shell.
+6. Create database with `turso db create property-auction-app`.
+7. Create the token with `turso db tokens create drizzle-turso-db`.
+8. Create a .env in the root directory, and add the following:
+```
+TURSO_CONNECTION_URL=<URL from step 6>
+TURSO_AUTH_TOKEN=<token from step 7>
+``` 
+9. Run migrations and fill the sqlite database with mock data through running the following:
     ```
     pnpm db:migrate
     pnpm db:seed
     ```
-4. Run `pnpm dev` to finally run locally.
+10. Run `pnpm dev` to finally run locally.
 
 ## Significant Tech Used
 
