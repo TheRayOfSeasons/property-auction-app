@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import ky from 'ky';
 import type { PropertyMainResponse } from '@/app/api/property/[id]/route';
+import type { PropertyFindFirstResponse } from '@/app/api/property/first/route';
 import type { TickerResponse } from '@/app/api/ticker/route';
 
 type MapMode = 'street' | 'satellite';
@@ -13,6 +14,7 @@ interface PropertyState {
 
 interface PropertyActions {
   fetchProperty: (id: number) => Promise<void>
+  fetchFirst: () => Promise<void>
   fetchTickerContents: () => Promise<void>
   toggleMapMode: () => void
 }
@@ -37,8 +39,14 @@ export const useProperties = create<State>((set, get) => ({
       });
     }
   },
+  fetchFirst: async () => {
+    const response = await ky.get(`/api/property/first`);
+    const data = await response.json<PropertyMainResponse>();
+    set({
+      currentProperty: data,
+    });
+  },
   fetchProperty: async (id) => {
-    console.log({ id });
     const response = await ky.get(`/api/property/${id}`);
     const data = await response.json<PropertyMainResponse>();
     set({

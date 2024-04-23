@@ -6,12 +6,12 @@ import { useProperties } from '@/store/properties';
 import { useEffect, useMemo } from 'react';
 
 export default function Home() {
-  const { currentProperty, fetchProperty, fetchTickerContents, mapMode } = useProperties();
+  const { currentProperty, fetchFirst, fetchTickerContents, mapMode } = useProperties();
 
   useEffect(() => {
-    fetchProperty(1);
+    fetchFirst();
     fetchTickerContents();
-  }, [fetchProperty, fetchTickerContents]);
+  }, [fetchFirst, fetchTickerContents]);
 
   const imageUrl = useMemo(() => {
     switch(mapMode) {
