@@ -1,5 +1,6 @@
+import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
- 
+
 /**
  * @swagger
  * /api:
@@ -8,7 +9,11 @@ import { NextResponse } from 'next/server';
  *     responses:
  *       200:
  *         msg: Running
+ *         ip: IP address of the requester
  */
 export async function GET(request: Request) {
-  return NextResponse.json({ msg: 'Running' });
+  return NextResponse.json({
+    msg: 'Running',
+    ip: headers().get('x-forwarded-for')
+  });
 }
