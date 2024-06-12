@@ -20,6 +20,8 @@ const action = async () => {
 
 export type PropertyFindFirstResponse = Awaited<ReturnType<typeof action>>;
 
+export const revalidate = false;
+
 /**
  * @swagger
  * /api/property/first:
@@ -30,6 +32,5 @@ export type PropertyFindFirstResponse = Awaited<ReturnType<typeof action>>;
  *         description: All the details from a property.
  */
 export async function GET(request: Request) {
-  console.log(request); // https://nextjs.org/docs/app/building-your-application/routing/route-handlers#behavior prevent caching
   return NextResponse.json(await action());
 }
